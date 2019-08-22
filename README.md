@@ -15,7 +15,7 @@ SendGrid, el servicio de entrega de correo electrónico de IBM Cloud, es un serv
 -Comenzamos el proyecto en Node.js creando una carpeta nombrada 'Envio_mail' y corremos el comando ***npm init***.<br>
 -Agregamos en el archivo ***package.json*** en la seccion de ***scripts*** "start": "node sendgrid.js".<br>
 -Debemos correr el comando en Node.js: ***npm install @sendgrid/mail***<br>
--Luego agregamos el archivo que se encuentra en este repositorio nombrado 'sendgrid.js' a la carpeta. <br>
+-Luego creamos un archivo y lo nombramos 'sendgrid.js' a la carpeta. <br>
 -Cuando hagamos cambios en el archivo debemos guardarlo y para probar corremos el comando ***npm start***. <br>
 
 Luego debemos tener una cuenta en Sendgrid. Nos dirigimos sobre el panel de la izquierda al item ***settings***
@@ -28,7 +28,20 @@ Y luego generamos una API KEY que es la que vamos a utilizar en nuestro codigo e
 
 ## Envio de Mail usando Sendgrid + Node.js
 
-El archivo sendgrid.js ya viene con un codigo que es capaz de mandar un mail a un destinatario sustituyendo los campos que se especifican. A continuación, se muestran otras opciones:
+Envio comun a ***UN DESTINATARIO***
+
+```js
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(YOUR_API_KEY); //Sustituir APIKEY
+const msg = {
+  to: 'recipient1@example.org', //cambiar por correo destino
+  from: 'sender@example.org', //cambiar por correo propio
+  subject: 'Hello world',
+  text: 'Hello plain world!',
+  html: '<p>Hello HTML world!</p>',
+};
+sgMail.send(msg);
+```
 
 Envio a ***MULTIPLES DESTINATARIOS***
 
