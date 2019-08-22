@@ -1,1 +1,1 @@
-# MVP-Sendgird
+# MVP Sendgrid
