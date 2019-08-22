@@ -36,7 +36,7 @@ El campo `to` puede contener una serie de destinatarios.
 
 ```js
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(YOUR_API_KEY);
+sgMail.setApiKey(YOUR_API_KEY); //Sustituir APIKEY
 const msg = {
   to: ['recipient1@example.org', 'recipient2@example.org'], //cambiar por los correos destino
   from: 'sender@example.org', //cambiar por correo propio
@@ -51,7 +51,7 @@ Si desea enviar múltiples correos electrónicos _individuales_ a múltiples des
 
 ```js
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(YOUR_API_KEY);
+sgMail.setApiKey(YOUR_API_KEY); //Sustituir APIKEY
 const msg = {
   to: ['recipient1@example.org', 'recipient2@example.org'],  //cambiar por los correos destino
   from: 'sender@example.org',  //cambiar por correo propio
