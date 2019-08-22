@@ -1,7 +1,7 @@
 # MVP Sendgrid
 
 <p align="center">
-  <img src="images/logo.png" width="150" length="200">
+  <img src="images/logo.png" width="500" length="500">
 </p>
 
 
@@ -21,7 +21,7 @@ SendGrid, el servicio de entrega de correo electrónico de IBM Cloud, es un serv
 Luego debemos tener una cuenta en Sendgrid. Nos dirigimos sobre el panel de la izquierda al item ***settings***
 
 <p align="center">
-  <img src="images/sendgrid1.png" width="150" length="200">
+  <img src="images/sendgrid1.png" width="500" length="500">
 </p>
 
 Y luego generamos una API KEY que es la que vamos a utilizar en nuestro codigo en Node.js
