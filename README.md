@@ -11,26 +11,35 @@ SendGrid, el servicio de entrega de correo electrónico de IBM Cloud, es un serv
 
 ## Crear proyecto
 
--Descargamos Node.js
--Comenzamos el proyecto en Node.js creando una carpeta nombrada 'Envio_mail' y corremos el comando ***npm init***.
--Agregamos en el archivo ***package.json*** en la seccion de ***scripts*** "start": "node sendgrid.js"
--Luego agregamos el archivo que se encuentra en este repositorio nombrado 'sendgrid.js' a la carpeta 
--Cuando hagamos cambios en el archivo debemos guardarlo y para probar corremos el comando ***npm start***
+-Descargamos Node.js <br>
+-Comenzamos el proyecto en Node.js creando una carpeta nombrada 'Envio_mail' y corremos el comando ***npm init***.<br>
+-Agregamos en el archivo ***package.json*** en la seccion de ***scripts*** "start": "node sendgrid.js".<br>
+-Debemos correr el comando en Node.js: ***npm install @sendgrid/mail***<br>
+-Luego agregamos el archivo que se encuentra en este repositorio nombrado 'sendgrid.js' a la carpeta. <br>
+-Cuando hagamos cambios en el archivo debemos guardarlo y para probar corremos el comando ***npm start***. <br>
 
+Luego debemos tener una cuenta en Sendgrid. Nos dirigimos sobre el panel de la izquierda al item ***settings***
+
+<p align="center">
+  <img src="images/sendgrid1.png" width="150" length="200">
+</p>
+
+Y luego generamos una API KEY que es la que vamos a utilizar en nuestro codigo en Node.js
 
 ## Envio de Mail usando Sendgrid + Node.js
 
+El archivo sendgrid.js ya viene con un codigo que es capaz de mandar un mail a un destinatario sustituyendo los campos que se especifican. A continuación, se muestran otras opciones:
 
-Debemos correr el comando en Node.js: ***npm install @sendgrid/mail*** 
+Envio a ***MULTIPLES DESTINATARIOS***
 
 El campo `to` puede contener una serie de destinatarios. Este mensaje
 
 ```js
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(YOUR_API_KEY);
 const msg = {
-  to: ['recipient1@example.org', 'recipient2@example.org'],
-  from: 'sender@example.org',
+  to: ['recipient1@example.org', 'recipient2@example.org'], //cambiar por los correos destino
+  from: 'sender@example.org', //cambiar por correo propio
   subject: 'Hello world',
   text: 'Hello plain world!',
   html: '<p>Hello HTML world!</p>',
@@ -38,14 +47,14 @@ const msg = {
 sgMail.send(msg);
 ```
 
-If you want to send multiple _individual_ emails to multiple recipient where they don't see each other's email addresses, use `sendMultiple` instead:
+Si desea enviar múltiples correos electrónicos _individuales_ a múltiples destinatarios donde no se ven las direcciones de correo electrónico de los demás, use `sendMultiple`:
 
 ```js
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(YOUR_API_KEY);
 const msg = {
-  to: ['recipient1@example.org', 'recipient2@example.org'],
-  from: 'sender@example.org',
+  to: ['recipient1@example.org', 'recipient2@example.org'],  //cambiar por los correos destino
+  from: 'sender@example.org',  //cambiar por correo propio
   subject: 'Hello world',
   text: 'Hello plain world!',
   html: '<p>Hello HTML world!</p>',
