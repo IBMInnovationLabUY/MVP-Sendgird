@@ -32,7 +32,7 @@ El archivo sendgrid.js ya viene con un codigo que es capaz de mandar un mail a u
 
 Envio a ***MULTIPLES DESTINATARIOS***
 
-El campo `to` puede contener una serie de destinatarios. Este mensaje
+El campo `to` puede contener una serie de destinatarios.
 
 ```js
 const sgMail = require('@sendgrid/mail');
