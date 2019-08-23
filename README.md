@@ -74,8 +74,32 @@ const msg = {
 };
 sgMail.sendMultiple(msg);
 ```
+También puede realizar un _Template_ del Mail en Sendgrid
 
+<p align="center">
+  <img src="images/sendgrid5.png" width="1000" length="1000">
+</p>
 
+Puede diseñar el Template y luego con el ID del mismo poder enviarlo desde Node con el siguiente codigo:
 
+```js
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(YOUR_API_KEY); //Sustituir APIKEY
+const msg = {
+  to: ['recipient1@example.org', 'recipient2@example.org'],  //cambiar por los correos destino
+  from: 'sender@example.org',  //cambiar por correo propio
+  subject: 'Hello world',
+  templateId: 'YOUR_TEMPLATE_ID' //Sustituir por TemplateId
+};
+sgMail.sendMultiple(msg);
+```
 
+Y también dentro de las funcionalidades de Sendgrid, podemos ver el estado de los Mail:
 
+<p align="center">
+  <img src="images/sendgrid2.png" width="1000" length="1000">
+</p>
+
+<p align="center">
+  <img src="images/sendgrid3.png" width="1000" length="1000">
+</p>
